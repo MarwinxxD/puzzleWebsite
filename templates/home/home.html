@@ -11,7 +11,9 @@
     <h1>Puzzle Hints</h1>
     <div class="hints-grid">
       {% for hint_number in hint_numbers %}
-        <a class="hint-box" href="{% url 'hint-page' hint_number %}" aria-label="Open hint {{ hint_number }}">Hint {{ hint_number }}</a>
+        <a class="hint-box hint-box-link" href="{% url 'hint-page' hint_number %}" aria-label="Open hint {{ hint_number }}">Hint {{ hint_number }}</a>
+      {% empty %}
+        <p class="hint-status">No hints available.</p>
       {% endfor %}
     </div>
 

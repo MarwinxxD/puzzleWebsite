@@ -125,3 +125,31 @@ h1 {
   color: #4b5563;
   line-height: 1.6;
 }
+
+.hint-status {
+  color: #1a202c;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.hint-timer-banner {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: #1a202c;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.hint-timer-banner p {
+  margin: 0;
+}
+
+.hint-timer-banner strong {
+  font-size: 1.2rem;
+}
+

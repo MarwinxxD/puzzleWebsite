@@ -9,6 +9,10 @@ if os.environ.get("VERCEL"):
     DEBUG = False
 ALLOWED_HOSTS = ["127.0.0.1", "localhost", ".vercel.app"]
 
+# Hint release schedule: day 1 maps to this date, day 2 is +1 day, etc.
+HINT_START_DATE = os.environ.get("HINT_START_DATE", "2026-04-02")
+HINT_COUNT = 7
+
 INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.staticfiles",

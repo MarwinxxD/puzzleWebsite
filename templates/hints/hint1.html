@@ -8,7 +8,13 @@
         <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     </head>
     <body>
-        <h1>Hint 1</h1>
+        {% if not is_available %}
+        <div class="hint-timer-banner">
+            <p>available in <strong id="countdown">{{ days_until_unlock }}</strong> day{{ days_until_unlock|pluralize }}</p>
+        </div>
+        {% endif %}
+
+        <h1>Hint {{ hint_number }}</h1>
         <div>
             <p>This is the first hint. It provides some guidance on how to approach the puzzle.</p>
         </div>
