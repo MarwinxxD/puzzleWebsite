@@ -1,11 +1,10 @@
 {
   "version": 2,
   "builds": [
-    { "src": "puzzle_project/wsgi.py", "use": "@vercel/python" },
-    { "src": "static/(.*)", "use": "@vercel/static" }
+    { "src": "puzzle_project/wsgi.py", "use": "@vercel/python" }
   ],
   "routes": [
-    { "src": "/static/(.*)", "dest": "/static/$1" },
+    { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "puzzle_project/wsgi.py" }
   ]
 }
