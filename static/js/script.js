@@ -1,4 +1,4 @@
-// Content for each hint – fill these in later
+// Content for each hint - fill these in later
 const hintContent = {
   1: "Content for Hint 1 coming soon.",
   2: "Content for Hint 2 coming soon.",

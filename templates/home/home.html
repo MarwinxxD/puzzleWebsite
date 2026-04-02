@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Puzzle Hints</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <h1>Puzzle Hints</h1>
+    <div class="hints-grid">
+      {% for hint_number in hint_numbers %}
+      <button class="hint-box" data-hint="{{ hint_number }}" aria-label="Open hint {{ hint_number }}">Hint {{ hint_number }}</button>
+      {% endfor %}
+    </div>
+
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-body">
+      <div class="modal-content">
+        <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+        <h2 id="modal-title"></h2>
+        <p id="modal-body"></p>
+      </div>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>
