@@ -11,16 +11,8 @@
     <h1>Puzzle Hints</h1>
     <div class="hints-grid">
       {% for hint_number in hint_numbers %}
-        <button class="hint-box" data-hint="{{ hint_number }}" aria-label="Open hint {{ hint_number }}">Hint {{ hint_number }}</button>
+        <a class="hint-box" href="{% url 'hint-page' hint_number %}" aria-label="Open hint {{ hint_number }}">Hint {{ hint_number }}</a>
       {% endfor %}
-    </div>
-
-    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-body">
-      <div class="modal-content">
-        <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
-        <h2 id="modal-title"></h2>
-        <p id="modal-body"></p>
-      </div>
     </div>
 
     <script src="{% static 'js/script.js' %}"></script>
