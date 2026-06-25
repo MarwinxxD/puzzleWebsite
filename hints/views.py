@@ -36,6 +36,10 @@ def index(request):
     return render(request, "home/home.html", context)
 
 
+def login_page(request):
+    return render(request, "login.html")
+
+
 def hint_page(request, hint_number):
     if hint_number not in range(1, settings.HINT_COUNT + 1):
         raise Http404("Hint not found")
