@@ -96,14 +96,14 @@
 
 			<form id="login-form" autocomplete="off">
 				<label for="password">Password</label>
-				<input id="password" name="password" type="password" placeholder="Password" />
+				<input id="password" name="password" type="password" placeholder="Password" solution="ichBinWeitWeg" />
 				<button type="submit">Unlock</button>
 				<div id="message" class="message" aria-live="polite"></div>
 			</form>
 		</main>
 
 		<script>
-			const correctPassword = "ihrWichser";
+			const correctPassword = "ichBinWeitWeg";
 			const homeUrl = "{% url 'index' %}";
 			const form = document.getElementById("login-form");
 			const passwordInput = document.getElementById("password");
