@@ -33,7 +33,7 @@ def index(request):
         "hint_numbers": range(1, settings.HINT_COUNT + 1),
         "start_date": _start_date(),
     }
-    return render(request, "home/home.html", context)
+    return render(request, "home.html", context)
 
 
 def login_page(request):
