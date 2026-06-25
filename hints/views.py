@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, timedelta
 
 from django.conf import settings
 from django.http import Http404
@@ -38,3 +38,28 @@ def index(request):
 
 def login_page(request):
     return render(request, "login.html")
+
+
+def hint_page(request, hint_number):
+    if hint_number not in range(1, settings.HINT_COUNT + 1):
+        raise Http404("Hint not found")
+
+    template_name = f"hints/hint{hint_number}.html"
+    try:
+        get_template(template_name)
+    except Exception as exc:
+        raise Http404("Hint template missing") from exc
+
+    start = _start_date()
+    hint_unlock_date = start + timedelta(days=hint_number - 1)
+    today = timezone.localdate()
+    days_until_unlock = (hint_unlock_date - today).days
+    is_available = days_until_unlock <= 0
+
+    context = {
+        "hint_number": hint_number,
+        "is_available": is_available,
+        "unlock_date": hint_unlock_date,
+        "days_until_unlock": max(0, days_until_unlock),
+    }
+    return render(request, template_name, context)
